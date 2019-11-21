@@ -43,16 +43,16 @@ int main() {
 	 */
 	int e[5];
 	for (e[0]=0; e[0]<5; ++e[0]) {
-		jobTaken[e[0]] = true;                        // record the job taken by employee-0
+		jobTaken[e[0]] = true; // record the job taken by employee-0
 		for (e[1]=0; e[1]<5; ++e[1]) {
 			if (jobTaken[e[1]]) continue;
-			jobTaken[e[1]] = true;                    // record the job taken by employee-1
+			jobTaken[e[1]] = true; // record the job taken by employee-1
 			for (e[2]=0; e[2]<5; ++e[2]) {
 				if (jobTaken[e[2]]) continue;
-				jobTaken[e[2]] = true;                // record the job taken by employee-2
+				jobTaken[e[2]] = true; // record the job taken by employee-2
 				for (e[3]=0; e[3]<5; ++e[3]) {
 					if (jobTaken[e[3]]) continue;
-					jobTaken[e[3]] = true;            // record the job taken by employee-3
+					jobTaken[e[3]] = true; // record the job taken by employee-3
 					for (e[4]=0; e[4]<5; ++e[4]) {
 						// if the job is taken by previous employees, then use 'continue' to skip this loop
 						// if the job is not taken, then go on at this loop
@@ -67,13 +67,13 @@ int main() {
 								minCostJobStatus[i] = e[i];
 						}
 					}
-					jobTaken[e[3]] = false;           // release the job taken by employee-3
+					jobTaken[e[3]] = false; // release the job taken by employee-3
 				}
-				jobTaken[e[2]] = false;               // release the job taken by employee-2
+				jobTaken[e[2]] = false; // release the job taken by employee-2
 			}
-			jobTaken[e[1]] = false;                   // release the job taken by employee-1
+			jobTaken[e[1]] = false; // release the job taken by employee-1
 		}
-		jobTaken[e[0]] = false;                       // release the job taken by employee-0
+		jobTaken[e[0]] = false; // release the job taken by employee-0
 	}
 	
 	cout << "The lowest cost is " << minCost << endl;
