@@ -2,10 +2,7 @@
 
 using namespace std;
 
-const int MAX_TASK_NUM = 20;
-const int MAX_EMPLOYEE_NUM = 20;
-
-int ReadInputFile(int costArrPtr[MAX_TASK_NUM][MAX_EMPLOYEE_NUM])
+int ReadInputFile(int costArrPtr[25][25])
 {
     FILE *f;
     f = fopen("HW7.txt", "r");
@@ -25,7 +22,7 @@ int ReadInputFile(int costArrPtr[MAX_TASK_NUM][MAX_EMPLOYEE_NUM])
     return taskCnt;
 }
 
-bool AlreadyUsed(int solution[MAX_EMPLOYEE_NUM], int c)
+bool AlreadyUsed(int solution[25], int c)
 {
     for (int i=c-1; i>=0; --i)
         if (solution[c] == solution[i])
@@ -33,8 +30,8 @@ bool AlreadyUsed(int solution[MAX_EMPLOYEE_NUM], int c)
     return false;
 }
 
-double TotalCost(int costArr[MAX_TASK_NUM][MAX_EMPLOYEE_NUM],
-                 int solution[MAX_EMPLOYEE_NUM],
+double TotalCost(int costArr[25][25],
+                 int solution[25],
                  int size)
 {
     double totalCost = 0.0;
@@ -48,7 +45,7 @@ double TotalCost(int costArr[MAX_TASK_NUM][MAX_EMPLOYEE_NUM],
 
 int main()
 {
-    int costArr[MAX_TASK_NUM][MAX_EMPLOYEE_NUM];
+    int costArr[25][25];
     int totalEmployee = 0;
     
     // read file
@@ -60,7 +57,7 @@ int main()
     }
     
     // start reading assignments from user-input
-    int solution[MAX_EMPLOYEE_NUM] = {0};
+    int solution[25] = {0};
     int nowEmployee = 0;
     while (true)
     {
